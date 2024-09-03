@@ -1,19 +1,20 @@
 import React from 'react'
-import ExercisesCategories from './ExercisesCategories'
-const HorizontalScroll = ({fetch}) => {
+import Categories from "../components/Categories"
+const HorizontalScroll = ({fetch ,bodyPart ,setBodyPart}) => {
   return (
-    <div className='flex flex-nowrap'>
+    <div>
+    
       {fetch && fetch.map((item) =>  (
-        <div className='p-10'
+        <div className=''
           key={item.id || item}
           itemId={item.id || item}
           title={item.id || item}
         >
-        <ExercisesCategories item={item} />
+          <Categories fetch={fetch} bodyPart={bodyPart} setBodyPart={setBodyPart}  />
         </div>
       )
       )}
-    </div>
+      </div>
   )
 }
 

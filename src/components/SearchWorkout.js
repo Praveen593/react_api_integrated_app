@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import{ useState , useEffect } from 'react'
 import {fetchData , exerciseOption} from '../utils/fetchData'
 import HorizontalScroll from './HorizontalScroll'
@@ -29,16 +29,16 @@ const SearchWorkout = (setExercises , bodyPart ,setBodyPart) => {
 }
   return (
 
-    <div className='w-full h-full '>
+    <div className='w-full h-full relative'>
         <h2 className='text-black font-Ambolition text-center text-4xl p-5 m-5'>Dive into your favorite workouts</h2>
-        <div className='flex justify-center' > 
-          <input className='w-52 h-9 px-2 border-2 border-black rounded-md' type="text" name="Searchbar" id="Searchbar" value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())}  placeholder='Search'/>
+        <div className='flex flex-row justify-center' > 
+          <input className='w-52 h-9 px-2 border-2  border-black rounded-md' type="text" name="Searchbar" id="Searchbar" value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())}  placeholder='Search'/>
           <button onClick={handleSearch} className='border-2 border-black bg-black text-white mx-1 px-4 rounded-md hover:text-black hover:bg-white hover:duration-300'>Search</button>
         </div>
-        <div className=' w-full p-20px'>
+        <div className='relative'>
           <HorizontalScroll fetch={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/> 
         </div>
-      
+       
     </div>
    
 
